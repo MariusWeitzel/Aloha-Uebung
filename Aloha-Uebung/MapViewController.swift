@@ -47,8 +47,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
             spot.position = CLLocationCoordinate2DMake(localLocations[i].lat.doubleValue, localLocations[i].long.doubleValue)
             spot.snippet = localLocations[i].name
             
-            spot.icon = UIImage(named: "surfer")
-            
+                       
             spot.appearAnimation = kGMSMarkerAnimationPop
             spot.map = self.mapView
             savedSpots.append(spot)
