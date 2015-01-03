@@ -70,6 +70,17 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
 
 
     }
+    
+    // Zusatzaufgabe
+    func mapView(mapView: GMSMapView!, didTapMarker marker: GMSMarker!) -> Bool {
+    
+        tempCoord = marker.position
+        performSegueWithIdentifier("MapToLocSegue", sender: self)
+
+
+        return true
+    }
+
 
    // Aufgabe: Datentransfer mittels Delegate
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
