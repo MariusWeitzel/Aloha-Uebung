@@ -33,6 +33,11 @@ class LocationEditorView: UIViewController {
                 nuPunkt = spot
             }
         }
+        
+        println("aktueller Punkt: \(nuPunkt.name)")
+        println("Koordinaten des Punktes: \(nuPunkt.lat) | \(nuPunkt.long)")
+        println("aktuelle Koordinaten \(self.coords.latitude) | \(self.coords.longitude)")
+        
         self.adressTextLabel.text = getAdress(coords)
         spotNameTf.text = nuPunkt.name
     }
