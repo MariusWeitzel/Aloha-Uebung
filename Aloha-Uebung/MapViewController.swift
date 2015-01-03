@@ -70,6 +70,19 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
 
 
     }
+    
+    // Zusatzaufgabe
+    
+    func mapView(mapView: GMSMapView!, didtap marker: GMSMarker!) -> Bool {
+
+        //FIXME: aus Locations die Koordinate wieder fischen & dem LocationEditorView den Punkt zum anzeigen übergeben
+        tempCoord = marker.position
+        performSegueWithIdentifier("MapToLocSegue", sender: self)
+
+
+        return true
+    }
+
 
    // Aufgabe: Datentransfer mittels Delegate
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
