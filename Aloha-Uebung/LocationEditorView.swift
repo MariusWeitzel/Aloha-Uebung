@@ -26,6 +26,17 @@ class LocationEditorView: UIViewController {
 
     @IBOutlet weak var spotNameTf: UITextField!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        for spot in Locations {
+            if (spot.lat == self.coords.latitude && spot.long == self.coords.longitude) {
+                nuPunkt = spot
+            }
+        }
+        self.adressTextLabel.text = getAdress(coords)
+        spotNameTf.text = nuPunkt.name
+    }
+    
     // Aufgabe: Datentransfer mittels Delegate
     @IBAction func saveBTNaction(sender: UIButton) {
         // erst mal Daten speichern
@@ -58,13 +69,6 @@ class LocationEditorView: UIViewController {
     }
     
     var coords: CLLocationCoordinate2D = CLLocationCoordinate2DMake(0.0, 0.0)
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        self.adressTextLabel.text = getAdress(coords)
-        
-    }
     
     // wird gestellt
     func getAdress(coord: CLLocationCoordinate2D) -> String{
