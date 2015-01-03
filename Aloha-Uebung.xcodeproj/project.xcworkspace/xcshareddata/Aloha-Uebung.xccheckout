@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>0CF01638-D04D-4314-A712-04695C515146</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Aloha-Uebung</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>88D8C90D9707F99F5B85BB36DC76AC0D72022CDA</key>
+		<string>https://github.com/MariusWeitzel/Aloha.git</string>
+		<key>D4A45D9D6D0C01590DB51E6EDFB781099A791895</key>
+		<string>https://github.com/MariusWeitzel/Aloha-Uebung.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Aloha-Uebung/Aloha-Uebung.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>88D8C90D9707F99F5B85BB36DC76AC0D72022CDA</key>
+		<string>../../../..</string>
+		<key>D4A45D9D6D0C01590DB51E6EDFB781099A791895</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/MariusWeitzel/Aloha-Uebung.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D4A45D9D6D0C01590DB51E6EDFB781099A791895</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>88D8C90D9707F99F5B85BB36DC76AC0D72022CDA</string>
+			<key>IDESourceControlWCCName</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D4A45D9D6D0C01590DB51E6EDFB781099A791895</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Jay</string>
+		</dict>
+	</array>
+</dict>
+</plist>
