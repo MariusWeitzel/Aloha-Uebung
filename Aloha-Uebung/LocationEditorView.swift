@@ -19,6 +19,7 @@ class LocationEditorView: UIViewController {
     var spotDelegate: SpotMarkerDelegate? = nil
     
     var nuPunkt = Location()
+    var me :Int = -1
     
     //Verbindung zu den UI-Elementen als Aufgabe
     
@@ -28,9 +29,10 @@ class LocationEditorView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        for spot in Locations {
-            if (spot.lat == self.coords.latitude && spot.long == self.coords.longitude) {
-                nuPunkt = spot
+        for var i:Int=0; i < Locations.count; i++ {
+            if (Locations[i].lat == self.coords.latitude && Locations[i].long == self.coords.longitude) {
+                nuPunkt = Locations[i]
+                me = i
             }
         }
         
@@ -56,6 +58,11 @@ class LocationEditorView: UIViewController {
         }
         else {
             nuPunkt.name = spotNameTf.text
+        }
+        
+        if me >= 0 {
+            Locations.removeAtIndex(me)
+            me = -1
         }
         
         Vault.saveLocation(nuPunkt)
