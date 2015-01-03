@@ -18,8 +18,10 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
     
     var tempCoord: CLLocationCoordinate2D! // wird gestellt
     
-    
+
     var savedSpots: [GMSMarker] = [] // wird gestellt
+
+    let locations = Location()
     
     // wird gestellt
     override func viewDidLoad() {
@@ -32,6 +34,27 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         mapView.myLocationEnabled = true
+        
+        loadSpotLocations()
+    }
+    
+    func loadSpotLocations(){
+        var localLocations = Vault.getLocations()
+        savedSpots.removeAll(keepCapacity: false)
+        for var i:Int = 0; i < localLocations.count; i++ {
+            let spot = GMSMarker()
+            
+            spot.position = CLLocationCoordinate2DMake(localLocations[i].lat.doubleValue, localLocations[i].long.doubleValue)
+            spot.snippet = localLocations[i].name
+            
+            spot.icon = UIImage(named: "surfer")
+            
+            spot.appearAnimation = kGMSMarkerAnimationPop
+            spot.map = self.mapView
+            savedSpots.append(spot)
+            
+        }
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -41,8 +64,6 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
     
     // Funktionsrumpf und Seque wird gestellt
     func mapView(mapView: GMSMapView!, didLongPressAtCoordinate longPressCoordinate: CLLocationCoordinate2D){
-
-       
 
         tempCoord = longPressCoordinate
         performSegueWithIdentifier("MapToLocSegue", sender: self)
