@@ -47,8 +47,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
             spot.position = CLLocationCoordinate2DMake(localLocations[i].lat.doubleValue, localLocations[i].long.doubleValue)
             spot.snippet = localLocations[i].name
             
-            spot.icon = UIImage(named: "surfer")
-            
+                       
             spot.appearAnimation = kGMSMarkerAnimationPop
             spot.map = self.mapView
             savedSpots.append(spot)
@@ -108,13 +107,11 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
                     var spotMarker = GMSMarker()
                     spotMarker.position = coords
                     spotMarker.snippet = "Spot"
-
-                    spotMarker.icon = UIImage(named: "surfer")
-
                     spotMarker.appearAnimation = kGMSMarkerAnimationPop
                     spotMarker.map = self.mapView
                     savedSpots.append(spotMarker)
                     println("neue Spotlocation: \(coords.latitude, coords.longitude)")
+                    
                 }
             }
         }
@@ -122,9 +119,6 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
             var spotMarker = GMSMarker()
             spotMarker.position = coords
             spotMarker.snippet = "Spot"
-
-            spotMarker.icon = UIImage(named: "surfer")
-
             spotMarker.appearAnimation = kGMSMarkerAnimationPop
             spotMarker.map = self.mapView
             savedSpots.append(spotMarker)
