@@ -18,6 +18,8 @@ class LocationEditorView: UIViewController {
 
     var spotDelegate: SpotMarkerDelegate? = nil
     
+    var nuPunkt = Location()
+    
     //Verbindung zu den UI-Elementen als Aufgabe
     
     @IBOutlet weak var adressTextLabel: UILabel!
@@ -26,9 +28,23 @@ class LocationEditorView: UIViewController {
     
     // Aufgabe: Datentransfer mittels Delegate
     @IBAction func saveBTNaction(sender: UIButton) {
+        // erst mal Daten speichern
+        nuPunkt.lat = self.coords.latitude
+        nuPunkt.long = self.coords.longitude
+        
+        // falls der Punkt keinen Namen bekommen hat!
+        if countElements(spotNameTf.text) == 0 {
+            //workaround um die Daten valide zu halten
+//            println("Name ist leer!")
+            nuPunkt.name = " "
+        }
+        else {
+            nuPunkt.name = spotNameTf.text
+        }
+        
+        Vault.saveLocation(nuPunkt)
         
         if (spotDelegate != nil) {
-            
             spotDelegate!.createNewSpotDidFinish(self, coords: coords)
         }
 

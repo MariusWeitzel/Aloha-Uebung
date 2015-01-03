@@ -23,6 +23,8 @@
 		BCD2911D1A57697F00A59D57 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD2911C1A57697F00A59D57 /* MapViewController.swift */; };
 		BCD2911F1A57FF0D00A59D57 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BCD2911E1A57FF0D00A59D57 /* GoogleMaps.bundle */; };
 		BCD291231A58081300A59D57 /* LocationEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD291221A58081300A59D57 /* LocationEditorView.swift */; };
+		DE96F5531A5845F400A0E981 /* Vault.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE96F5521A5845F400A0E981 /* Vault.swift */; };
+		DE96F5551A58467B00A0E981 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE96F5541A58467B00A0E981 /* Location.swift */; };
 		DECF2B721A56C836003F2862 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECF2B711A56C836003F2862 /* AppDelegate.swift */; };
 		DECF2B741A56C836003F2862 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECF2B731A56C836003F2862 /* ViewController.swift */; };
 		DECF2B771A56C836003F2862 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DECF2B751A56C836003F2862 /* Main.storyboard */; };
@@ -59,6 +61,8 @@
 		BCD2911C1A57697F00A59D57 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		BCD2911E1A57FF0D00A59D57 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
 		BCD291221A58081300A59D57 /* LocationEditorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationEditorView.swift; sourceTree = "<group>"; };
+		DE96F5521A5845F400A0E981 /* Vault.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vault.swift; sourceTree = "<group>"; };
+		DE96F5541A58467B00A0E981 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		DECF2B6C1A56C836003F2862 /* Aloha-Uebung.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Aloha-Uebung.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DECF2B701A56C836003F2862 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DECF2B711A56C836003F2862 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +150,8 @@
 			isa = PBXGroup;
 			children = (
 				BCD291221A58081300A59D57 /* LocationEditorView.swift */,
+				DE96F5521A5845F400A0E981 /* Vault.swift */,
+				DE96F5541A58467B00A0E981 /* Location.swift */,
 				BCD2911C1A57697F00A59D57 /* MapViewController.swift */,
 				DECF2B711A56C836003F2862 /* AppDelegate.swift */,
 				DECF2B731A56C836003F2862 /* ViewController.swift */,
@@ -288,6 +294,8 @@
 				BCD2911D1A57697F00A59D57 /* MapViewController.swift in Sources */,
 				BCD291231A58081300A59D57 /* LocationEditorView.swift in Sources */,
 				DECF2B721A56C836003F2862 /* AppDelegate.swift in Sources */,
+				DE96F5551A58467B00A0E981 /* Location.swift in Sources */,
+				DE96F5531A5845F400A0E981 /* Vault.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

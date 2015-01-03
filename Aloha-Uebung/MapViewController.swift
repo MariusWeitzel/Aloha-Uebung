@@ -25,6 +25,8 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        Vault.loadLocations()
+        
         mapView.delegate = self
         mapView.myLocationEnabled = true
         locationManager.delegate = self
