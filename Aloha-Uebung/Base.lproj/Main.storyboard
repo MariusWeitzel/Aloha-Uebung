@@ -18,23 +18,10 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fgd-N9-Hmf" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Fgd-N9-Hmf" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="7jn-hB-8Qu"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Fgd-N9-Hmf" secondAttribute="trailing" constant="-16" id="NIC-IW-yvz"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Fgd-N9-Hmf" secondAttribute="bottom" id="lgV-8h-zjo"/>
-                            <constraint firstItem="Fgd-N9-Hmf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="mEc-1Z-pJz"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="f53-Ue-5NW"/>
                     <connections>
-                        <outlet property="mapView" destination="Fgd-N9-Hmf" id="aon-4g-Pw5"/>
                         <segue destination="Wto-G3-Wl0" kind="show" identifier="MapToLocSegue" id="UsX-yW-Trw"/>
                     </connections>
                 </viewController>
@@ -98,7 +85,7 @@
                                     <action selector="abortBTNaction:" destination="Wto-G3-Wl0" eventType="touchUpInside" id="U26-eC-FG2"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" misplaced="YES" text="Adresstext" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pgc-kJ-Sjc">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Adresstext" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pgc-kJ-Sjc">
                                 <rect key="frame" x="261" y="80" width="497" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="497" id="cRh-kH-lhC"/>
@@ -111,7 +98,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="UgJ-ub-cah" firstAttribute="trailing" secondItem="kMX-u6-oFi" secondAttribute="trailingMargin" id="33U-TI-ULx"/>
-                            <constraint firstItem="Pgc-kJ-Sjc" firstAttribute="top" secondItem="K3W-D2-FJh" secondAttribute="bottom" constant="8" symbolic="YES" id="5Ju-jY-PT3"/>
+                            <constraint firstItem="Pgc-kJ-Sjc" firstAttribute="top" secondItem="K3W-D2-FJh" secondAttribute="bottom" constant="16" id="5Ju-jY-PT3"/>
                             <constraint firstItem="UgJ-ub-cah" firstAttribute="baseline" secondItem="Ur1-Ru-38i" secondAttribute="firstBaseline" id="5Lz-5G-lvD"/>
                             <constraint firstItem="ZXb-XK-2cu" firstAttribute="top" secondItem="K3W-D2-FJh" secondAttribute="bottom" constant="16" id="7NT-JH-aMi"/>
                             <constraint firstItem="ZXb-XK-2cu" firstAttribute="leading" secondItem="kMX-u6-oFi" secondAttribute="leadingMargin" id="Abq-4E-sBo"/>

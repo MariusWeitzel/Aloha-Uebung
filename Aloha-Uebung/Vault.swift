@@ -19,28 +19,21 @@ var Locations = [Location]()
 class Vault: UIViewController {
     
     class func saveLocation(punkt: Location) {
-        // anzulegenden Punkt an bisherige Locations anfügen
-        Locations.append(punkt)
+        // Aufgabe - anzulegenden Punkt an bisherige Locations anfügen
+        
         var saveStr = ""
         
-        println("Anzahl zu speichernder Punkte: \(Locations.count)")
+        //DEBUG: Anzahl zu speichernder Punkte überprüfen
+        //println("Anzahl zu speichernder Punkte: \(Locations.count)")
         
-        // Locations auseinander fuddeln
-        for spot in Locations {
-            //ID aus Längen- und Breitengrad
-            saveStr += spot.lat.stringValue + spotItemSeperator
-            saveStr += spot.long.stringValue + spotItemSeperator
-            
-            //der Name
-            saveStr += spot.name + spotItemSeperator
-            
-            // zum trennen der Punkte
-            saveStr += spotSeperator;
-        }
+        // Aufgabe - Schleife um Locations auseinander zu fuddeln & als String speichern
+        // Hinweis: dazu die Seperatoren benutzen
         
-        let dirs = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true) as? [String]
+        // Aufgabe - von iOS einen Pfad als String zum speichern geben lassen
         
-        let path = dirs?[0].stringByAppendingPathComponent("locations.csv")
+        // Aufgabe - Dateinamen anhängen
+        let path = dirs?[0].
+        
         
         //DEBUG: um sich Pfad anschauen zu können - extern drauf zugreifen kann man eh nicht
         //println("path: \(path)")
@@ -48,7 +41,7 @@ class Vault: UIViewController {
         if (path != nil) {
             saveStr.writeToFile(path!, atomically: true, encoding: NSUTF8StringEncoding, error: nil)
             //DEBUG: damit man sich den gespeicherten String nochmal anschauen kann
-            println("Daten \"\(saveStr)\" geschrieben.")
+            //println("Daten \"\(saveStr)\" geschrieben.")
         }
     }
     
@@ -56,7 +49,7 @@ class Vault: UIViewController {
         var loadedStr: String
         let dirs = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true) as? [String]
         
-        let path = dirs?[0].stringByAppendingPathComponent("locations.csv")
+        // Aufgabe - den selben Dateinamen zum laden auch wieder anfügen
         
         //DEBUG: um sich Pfad anschauen zu können - extern drauf zugreifen kann man eh nicht
         //println("path: \(path)")
@@ -70,17 +63,8 @@ class Vault: UIViewController {
             //die Punkte trennen und ihre Eigenschaften als Array speichern
             let splittedLocations = split(loadedStr, {$0=="#"})
             
-            for location in splittedLocations {
-                var pointItems = split(location, {$0=="|"})
-                var nuPunkt = Location()
-                
-                nuPunkt.lat = NSNumberFormatter().numberFromString(pointItems[0])!
-                nuPunkt.long = NSNumberFormatter().numberFromString(pointItems[1])!
-                
-                nuPunkt.name = pointItems[2]
-                
-                //den geladenen Punkt an die Sammlung wieder anfügen
-                Locations.append(nuPunkt)
+            // Aufgabe - die Punkte in ihre Bestandteile aufteilen & in die jeweiligen Werte des Location Structs schreiben & die Sammlung aller Punkte (Locations) befüllen
+            
             }
             //DEBUG: um sich den geladenen String anzusehen
 //            println("\"\(loadedStr)\" geladen");
@@ -91,7 +75,7 @@ class Vault: UIViewController {
         }
         
         //DEBUG: Anzahl geladener Punkte ausgeben
-        println("Anzahl geladener Punkte: \(Locations.count)")
+        //println("Anzahl geladener Punkte: \(Locations.count)")
         
     }
     

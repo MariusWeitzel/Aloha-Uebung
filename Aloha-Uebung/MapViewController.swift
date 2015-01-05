@@ -11,16 +11,15 @@ import UIKit
 
 class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate, SpotMarkerDelegate{
     
-    // MapView bzw Verbindung erstellen: Teil der Ü-aufgabe
-    @IBOutlet weak var mapView: GMSMapView! // Aufgabe
+    // Aufgabe - mapView für Google Maps im Storyboard erstellen
+    // Aufgabe - hier musst du dann auch auf die mapView zugreifen können ;)
  
-    let locationManager = CLLocationManager() // wird gestellt
+    let locationManager = CLLocationManager()
     
-    var tempCoord: CLLocationCoordinate2D! // wird gestellt
+    var tempCoord: CLLocationCoordinate2D!
     
 
-    var savedSpots: [GMSMarker] = [] // wird gestellt
-
+    var savedSpots: [GMSMarker] = []
     let locations = Location()
     
     // wird gestellt
@@ -33,7 +32,6 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
         mapView.myLocationEnabled = true
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
-        mapView.myLocationEnabled = true
         
         loadSpotLocations()
     }
@@ -85,7 +83,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "MapToLocSegue"){
 
-            println("ok segue")
+            //println("ok segue")
             let vc = segue.destinationViewController as LocationEditorView
             vc.coords = tempCoord
             vc.spotDelegate = self
@@ -98,31 +96,21 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
         // entferne die LocationEditorView
         controller.navigationController?.popViewControllerAnimated(true)
         // erstelle neuen Surfspotmarker
-        if(!savedSpots.isEmpty){
+        if (!savedSpots.isEmpty) {
             for( var i:Int = 0; i < savedSpots.count; i++){
-                if(savedSpots[i].position.latitude == coords.latitude && savedSpots[i].position.longitude == coords.longitude){
-                    
-                }
-                else{
+                if(savedSpots[i].position.latitude != coords.latitude && savedSpots[i].position.longitude != coords.longitude){
                     var spotMarker = GMSMarker()
-                    spotMarker.position = coords
-                    spotMarker.snippet = "Spot"
-                    spotMarker.appearAnimation = kGMSMarkerAnimationPop
-                    spotMarker.map = self.mapView
-                    savedSpots.append(spotMarker)
-                    println("neue Spotlocation: \(coords.latitude, coords.longitude)")
-                    
+                    //Aufgabe - Marker an der Koordinate auf der Map anzeigen
+                    //          Marker an die Map übergeben
+                    //          Marker in Array (savedSpots) speichern
+                    //println("neue Spotlocation: \(coords.latitude, coords.longitude)")
                 }
             }
         }
-        else{
+        else {
             var spotMarker = GMSMarker()
-            spotMarker.position = coords
-            spotMarker.snippet = "Spot"
-            spotMarker.appearAnimation = kGMSMarkerAnimationPop
-            spotMarker.map = self.mapView
-            savedSpots.append(spotMarker)
-            println("neue Spotlocation: \(coords.latitude, coords.longitude)")
+            // Aufgabe - hier analog, wie zu den bestehenden Punkten
+            //println("neue Spotlocation: \(coords.latitude, coords.longitude)")
         
 
         }
