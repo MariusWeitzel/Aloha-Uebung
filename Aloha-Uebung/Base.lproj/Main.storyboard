@@ -98,7 +98,7 @@
                                     <action selector="abortBTNaction:" destination="Wto-G3-Wl0" eventType="touchUpInside" id="U26-eC-FG2"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" misplaced="YES" text="Adresstext" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pgc-kJ-Sjc">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Adresstext" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pgc-kJ-Sjc">
                                 <rect key="frame" x="261" y="80" width="497" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="497" id="cRh-kH-lhC"/>
@@ -111,7 +111,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="UgJ-ub-cah" firstAttribute="trailing" secondItem="kMX-u6-oFi" secondAttribute="trailingMargin" id="33U-TI-ULx"/>
-                            <constraint firstItem="Pgc-kJ-Sjc" firstAttribute="top" secondItem="K3W-D2-FJh" secondAttribute="bottom" constant="8" symbolic="YES" id="5Ju-jY-PT3"/>
+                            <constraint firstItem="Pgc-kJ-Sjc" firstAttribute="top" secondItem="K3W-D2-FJh" secondAttribute="bottom" constant="16" id="5Ju-jY-PT3"/>
                             <constraint firstItem="UgJ-ub-cah" firstAttribute="baseline" secondItem="Ur1-Ru-38i" secondAttribute="firstBaseline" id="5Lz-5G-lvD"/>
                             <constraint firstItem="ZXb-XK-2cu" firstAttribute="top" secondItem="K3W-D2-FJh" secondAttribute="bottom" constant="16" id="7NT-JH-aMi"/>
                             <constraint firstItem="ZXb-XK-2cu" firstAttribute="leading" secondItem="kMX-u6-oFi" secondAttribute="leadingMargin" id="Abq-4E-sBo"/>

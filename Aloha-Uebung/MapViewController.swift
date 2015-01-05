@@ -34,6 +34,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         mapView.myLocationEnabled = true
+        mapView.settings.compassButton = true
         
         loadSpotLocations()
     }
