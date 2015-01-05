@@ -8,10 +8,12 @@
 
 import UIKit
 
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 // Aufgabe - Delegate Funktionsrumpf schreiben
 // Hinweis - aufzurufende Funktion existiert im MapViewController
 protocol SpotMarkerDelegate {
 }
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
 
 class LocationEditorView: UIViewController {
@@ -20,7 +22,7 @@ class LocationEditorView: UIViewController {
     
     var nuPunkt = Location()
     var me :Int = -1
-    
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
     // Aufgabe - Zugriff auf die UI-Elemente gewährleisten
     
     override func viewDidLoad() {
@@ -39,8 +41,10 @@ class LocationEditorView: UIViewController {
         
         self..text = getAdress(coords)
         self..text = nuPunkt.name
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
     }
-    
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
     // Aufgabe: Datentransfer mittels Delegate
     @IBAction func saveBTNaction(sender: UIButton) {
         // erst mal Daten speichern
@@ -67,6 +71,7 @@ class LocationEditorView: UIViewController {
         
         if (spotDelegate != nil) {
             spotDelegate!.createNewSpotDidFinish(self, coords: coords)
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
         }
         
     }
@@ -85,6 +90,7 @@ class LocationEditorView: UIViewController {
         
         
         var newAddress: String = "Adresse wird geladen"
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
         // Aufgabe - Funktion finden um die Adresse aus den Koordinaten wiederherstellen
         geocoder.(coord) { response , error in
             
@@ -92,6 +98,7 @@ class LocationEditorView: UIViewController {
                 let lines = address.lines as [String]
                 newAddress = join(" ", lines)
                 self..text = newAddress
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
             }
         }
         

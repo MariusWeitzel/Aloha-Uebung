@@ -11,8 +11,11 @@ import UIKit
 
 class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate, SpotMarkerDelegate{
     
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
     // Aufgabe - mapView für Google Maps im Storyboard erstellen
     // Aufgabe - hier musst du dann auch auf die mapView zugreifen können ;)
+    
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  
     let locationManager = CLLocationManager()
     
@@ -67,32 +70,28 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
 
 
     }
-    
-    // Zusatzaufgabe
+
     func mapView(mapView: GMSMapView!, didTapMarker marker: GMSMarker!) -> Bool {
-    
         tempCoord = marker.position
         performSegueWithIdentifier("MapToLocSegue", sender: self)
-
 
         return true
     }
 
-
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
    // Aufgabe: Datentransfer mittels Delegate
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "MapToLocSegue"){
 
-            //println("ok segue")
             let vc = segue.destinationViewController as LocationEditorView
             vc.coords = tempCoord
             vc.spotDelegate = self
-
+            
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
         }
     }
-    // Aufgabe: Spoterstellung
+    
     func createNewSpotDidFinish(controller: LocationEditorView, coords: CLLocationCoordinate2D){
-        
         // entferne die LocationEditorView
         controller.navigationController?.popViewControllerAnimated(true)
         // erstelle neuen Surfspotmarker
@@ -104,15 +103,27 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
                     //          Marker an die Map übergeben
                     //          Marker in Array (savedSpots) speichern
                     //println("neue Spotlocation: \(coords.latitude, coords.longitude)")
+                    
+                    
+                    
+                    
+                    
+                    
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
                 }
             }
         }
         else {
             var spotMarker = GMSMarker()
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
             // Aufgabe - hier analog, wie zu den bestehenden Punkten
             //println("neue Spotlocation: \(coords.latitude, coords.longitude)")
         
 
+            
+            
+            
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
         }
         
     }

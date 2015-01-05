@@ -8,7 +8,7 @@
 
 import Foundation
 
-
+// Hier sind keine Änderungen notwendig
 public struct Location {
     //ID bestehend aus der Koordinate
     var lat: NSNumber
