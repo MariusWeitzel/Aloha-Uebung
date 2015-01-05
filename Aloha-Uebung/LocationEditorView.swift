@@ -8,9 +8,9 @@
 
 import UIKit
 
-// Aufgabe - Delegate Funktion
+// Aufgabe - Delegate Funktionsrumpf schreiben
+// Hinweis - aufzurufende Funktion existiert im MapViewController
 protocol SpotMarkerDelegate {
-    func createNewSpotDidFinish(controller: LocationEditorView, coords: CLLocationCoordinate2D)
 }
 
 
