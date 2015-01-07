@@ -38,7 +38,7 @@ class Vault: UIViewController {
             saveStr += spotSeperator;
         }
         
-        let dirs = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true) as? [String]
+        let dirs = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true) as? [String]
         
         let path = dirs?[0].stringByAppendingPathComponent("locations.csv")
         
@@ -54,7 +54,7 @@ class Vault: UIViewController {
     
     class func loadLocations() {
         var loadedStr: String
-        let dirs = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true) as? [String]
+        let dirs = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true) as? [String]
         
         let path = dirs?[0].stringByAppendingPathComponent("locations.csv")
         
@@ -74,8 +74,8 @@ class Vault: UIViewController {
                 var pointItems = split(location, {$0=="|"})
                 var nuPunkt = Location()
                 
-                nuPunkt.lat = NSNumberFormatter().numberFromString(pointItems[0])!
-                nuPunkt.long = NSNumberFormatter().numberFromString(pointItems[1])!
+                nuPunkt.lat = (pointItems[0] as NSString).doubleValue
+                nuPunkt.long = (pointItems[1] as NSString).doubleValue
                 
                 nuPunkt.name = pointItems[2]
                 
