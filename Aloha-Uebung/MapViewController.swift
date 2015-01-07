@@ -101,10 +101,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
         // erstelle neuen Surfspotmarker
         if(!savedSpots.isEmpty){
             for( var i:Int = 0; i < savedSpots.count; i++){
-                if(savedSpots[i].position.latitude == coords.latitude && savedSpots[i].position.longitude == coords.longitude){
-                    
-                }
-                else{
+                if(savedSpots[i].position.latitude != coords.latitude && savedSpots[i].position.longitude != coords.longitude){
                     var spotMarker = GMSMarker()
                     spotMarker.position = coords
                     spotMarker.snippet = "Spot"
@@ -112,7 +109,6 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
                     spotMarker.map = self.mapView
                     savedSpots.append(spotMarker)
                     println("neue Spotlocation: \(coords.latitude, coords.longitude)")
-                    
                 }
             }
         }
