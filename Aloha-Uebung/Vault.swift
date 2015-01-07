@@ -56,7 +56,7 @@ class Vault: UIViewController {
     
     class func loadLocations() {
         var loadedStr: String
-        let dirs = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true) as? [String]
+        let dirs = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true) as? [String]
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
         // Aufgabe - den selben Dateinamen zum laden auch wieder anfügen
